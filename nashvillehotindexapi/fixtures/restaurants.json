@@ -3,8 +3,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 1,
         "fields": {
-            "name": "Boltons",
-            "website": "",
+            "name": "Bolton's",
+            "website": "https://www.boltonsspicy.com",
             "img": ""
         }
     },
@@ -13,7 +13,7 @@
         "pk": 2,
         "fields": {
             "name": "Hattie B's",
-            "website": 0,
+            "website": "https://hattieb.com/",
             "img": ""
         }
     },
@@ -21,8 +21,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 3,
         "fields": {
-            "name": "Scary Spice",
-            "website": "",
+            "name": "Slow Burn",
+            "website": "https://www.slowburnhotchicken.com/#/",
             "img": ""
         }
     },
@@ -30,8 +30,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 4,
         "fields": {
-            "name": "Posh Spice",
-            "website": 0,
+            "name": "Prince's",
+            "website": "https://www.princeshotchicken.com/",
             "img": ""
         }
     },
@@ -39,8 +39,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 5,
         "fields": {
-            "name": "Scary Spice",
-            "website": "",
+            "name": "Helen's Hot Chicken",
+            "website": "https://www.helenshotchicken.com/",
             "img": ""
         }
     },
@@ -48,8 +48,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 6,
         "fields": {
-            "name": "Posh Spice",
-            "website": 0,
+            "name": "Party Fowl",
+            "website": "https://partyfowl.com/",
             "img": ""
         }
     },
@@ -57,8 +57,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 7,
         "fields": {
-            "name": "Scary Spice",
-            "website": "",
+            "name": "BJ's Hot Chicken",
+            "website": "615-866-9365",
             "img": ""
         }
     },
@@ -66,8 +66,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 8,
         "fields": {
-            "name": "Posh Spice",
-            "website": 0,
+            "name": "Pepperfire Hot Chicken",
+            "website": "https://www.pepperfirehotchicken.com/",
             "img": ""
         }
     },
@@ -75,8 +75,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 9,
         "fields": {
-            "name": "Scary Spice",
-            "website": "",
+            "name": "Flamie's",
+            "website": "615-522-2219",
             "img": ""
         }
     },
@@ -84,8 +84,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 10,
         "fields": {
-            "name": "Posh Spice",
-            "website": 0,
+            "name": "Big Shakes",
+            "website": "https://www.bigshakeshotchicken.com/",
             "img": ""
         }
     },
@@ -93,8 +93,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 11,
         "fields": {
-            "name": "Scary Spice",
-            "website": "",
+            "name": "Firecracker Hot Chicken",
+            "website": "615-288-2665",
             "img": ""
         }
     },
@@ -102,8 +102,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 12,
         "fields": {
-            "name": "Posh Spice",
-            "website": 0,
+            "name": "400 Degrees",
+            "website": "http://400degreeshotchicken.com/",
             "img": ""
         }
     },
@@ -111,8 +111,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 13,
         "fields": {
-            "name": "Scary Spice",
-            "website": "",
+            "name": "Hot Stuff",
+            "website": "https://www.hotstufftennessee.com/",
             "img": ""
         }
     },
@@ -120,8 +120,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 14,
         "fields": {
-            "name": "Posh Spice",
-            "website": 0,
+            "name": "Scoreboard Bar and Grill",
+            "website": "http://www.scoreboardbar.net/",
             "img": ""
         }
     },
@@ -129,8 +129,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 15,
         "fields": {
-            "name": "Scary Spice",
-            "website": "",
+            "name": "Southern V",
+            "website": "https://eatatthesouthernv.square.site/",
             "img": ""
         }
     },
@@ -138,8 +138,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 16,
         "fields": {
-            "name": "Posh Spice",
-            "website": 0,
+            "name": "Be Hive",
+            "website": "https://bethehive.com/",
             "img": ""
         }
     },
@@ -147,8 +147,8 @@
         "model": "nashvillehotindexapi.restaurant",
         "pk": 17,
         "fields": {
-            "name": "Posh Spice",
-            "website": 0,
+            "name": "Moore's Chicken",
+            "website": "http://www.mooreschicken.com/",
             "img": ""
         }
     }
