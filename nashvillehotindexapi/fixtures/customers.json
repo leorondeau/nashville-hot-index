@@ -1,0 +1,29 @@
+[
+    {
+        "model": "nashvillehotindexapi.customer",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "user_name": "Scary Spice",
+            "heat_tolerance": 50
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.customer",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "user_name": "Posh Spice",
+            "heat_tolerance": 0
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.customer",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "user_name": "Ginger Spice",
+            "heat_tolerance": 100
+        }
+    }
+]
