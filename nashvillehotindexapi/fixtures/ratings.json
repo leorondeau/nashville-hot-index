@@ -1,0 +1,11 @@
+[
+    {
+        "model": "nashvillehotindexapi.rating",
+        "pk": 1,
+        "fields": {
+            "restaurantheat": 4,
+            "customer": 1,
+            "rating": 75
+        }
+    }
+]

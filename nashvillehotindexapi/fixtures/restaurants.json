@@ -1,0 +1,155 @@
+[
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 1,
+        "fields": {
+            "name": "Bolton's",
+            "website": "https://www.boltonsspicy.com",
+            "img": "https://lirp-cdn.multiscreensite.com/61229485/dms3rep/multi/opt/Boltons+Logo-480w.png"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 2,
+        "fields": {
+            "name": "Hattie B's",
+            "website": "https://hattieb.com/",
+            "img": "https://hattieb.com/images/header_logo.png"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 3,
+        "fields": {
+            "name": "Slow Burn",
+            "website": "https://www.slowburnhotchicken.com/#/",
+            "img": "https://menufyproduction.imgix.net/637181738176746952+18428.png?auto=compress,format&h=1080&w=1920&fit=max"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 4,
+        "fields": {
+            "name": "Prince's",
+            "website": "https://www.princeshotchicken.com/",
+            "img": "https://static.wixstatic.com/media/659d6b_8a0627bb57d748c5b2de116579c0e71b~mv2.png/v1/fill/w_338,h_140,al_c,q_85,usm_0.66_1.00_0.01/princes-hot-chicken-logo.webp"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 5,
+        "fields": {
+            "name": "Helen's Hot Chicken",
+            "website": "https://www.helenshotchicken.com/",
+            "img": "https://images.getbento.com/4w3LcUauQICkXO87zjKh_logo.png"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 6,
+        "fields": {
+            "name": "Party Fowl",
+            "website": "https://partyfowl.com/",
+            "img": "https://static1.squarespace.com/static/5e41c508b420c0202166e401/t/5e46e31a6ddd715bd22218ed/1614871347584/?format=1500w"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 7,
+        "fields": {
+            "name": "BJ's Hot Chicken",
+            "website": "615-866-9365",
+            "img": ""
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 8,
+        "fields": {
+            "name": "Pepperfire Hot Chicken",
+            "website": "https://www.pepperfirehotchicken.com/",
+            "img": "https://static.wixstatic.com/media/c25fab_9652f48341d77072acab0d01a07a33aa.png/v1/fill/w_112,h_164,al_c,q_85,usm_0.66_1.00_0.01/c25fab_9652f48341d77072acab0d01a07a33aa.webp"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 9,
+        "fields": {
+            "name": "Flamie's",
+            "website": "615-522-2219",
+            "img": "https://scontent.faus1-1.fna.fbcdn.net/v/t1.0-9/137001880_104424298292472_6287064025985797067_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=7-udilciuNEAX89vvjQ&_nc_ht=scontent.faus1-1.fna&oh=d0f461ca8156a40f8d4863173dad7e42&oe=6071CFBC"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 10,
+        "fields": {
+            "name": "Big Shakes",
+            "website": "https://www.bigshakeshotchicken.com/",
+            "img": "https://www.bigshakeshotchicken.com/wp-content/uploads/2020/06/Bigshakes_logo-1.png"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 11,
+        "fields": {
+            "name": "Firecracker Hot Chicken",
+            "website": "615-288-2665",
+            "img": "https://scontent.faus1-1.fna.fbcdn.net/v/t1.0-9/15727174_395928527465420_356911493563812568_n.png?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=CiVnt0FPt20AX8FHxn_&_nc_ht=scontent.faus1-1.fna&oh=4c5d3bbf7bf8e16233e4250ce324714b&oe=606E7919"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 12,
+        "fields": {
+            "name": "400 Degrees",
+            "website": "http://400degreeshotchicken.com/",
+            "img": "http://400degreeshotchicken.com/wp-content/uploads/2015/09/400-degrees1.gif"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 13,
+        "fields": {
+            "name": "Hot Stuff",
+            "website": "https://www.hotstufftennessee.com/",
+            "img": "https://spoton-prod-websites-user-assets.s3.amazonaws.com/static/favicons/j4OelIoQP6bUiQ6TspMm_Hot-Stuff-Chicken-logo.png"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 14,
+        "fields": {
+            "name": "Scoreboard Bar and Grill",
+            "website": "http://www.scoreboardbar.net/",
+            "img": "https://static.wixstatic.com/media/b0b25e_9a26e03c6ec3488ea82b3aee419d887b~mv2_d_4500_4500_s_4_2.png/v1/fill/w_452,h_451,al_c,q_85,usm_0.66_1.00_0.01/Blue%20Circle%20Background%20Logo.webp"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 15,
+        "fields": {
+            "name": "Southern V",
+            "website": "https://eatatthesouthernv.square.site/",
+            "img": "https://eatatthesouthernv.square.site/uploads/b/685ea3f1880b59b7830fcbf435b956b901a578805b5b8dc1ebaae336c2e513df/TheSouthernV-logo-0.75x_1589827481.png?width=400"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 16,
+        "fields": {
+            "name": "Be Hive",
+            "website": "https://bethehive.com/",
+            "img": "https://static1.squarespace.com/static/5189aafbe4b0288d5ff6a77a/t/5a690e6f71c10b02e7d4ed1e/1614985361154/?format=1500w"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurant",
+        "pk": 17,
+        "fields": {
+            "name": "Moore's Chicken",
+            "website": "http://www.mooreschicken.com/",
+            "img": "http://www.mooreschicken.com/img/msfc-crown-logo.png"
+        }
+    }
+]
