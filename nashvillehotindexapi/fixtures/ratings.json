@@ -1,0 +1,20 @@
+[
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 1,
+        "fields": {
+            "restaurantheat": 4,
+            "customer": 1,
+            "rating": 75
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 1,
+        "fields": {
+            "restaurantheat": 10,
+            "customer": 2,
+            "rating": 68
+        }
+    }
+]
