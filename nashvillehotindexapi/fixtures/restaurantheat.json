@@ -1,0 +1,244 @@
+[
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 1,
+        "fields": {
+            "restaurant": 1,
+            "name": "non-spicy"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 2,
+        "fields": {
+            "restaurant": 1,
+            "name": "lite mild"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 3,
+        "fields": {
+            "restaurant": 1,
+            "name": "mild"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 4,
+        "fields": {
+            "restaurant": 1,
+            "name": "medium"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 5,
+        "fields": {
+            "restaurant": 1,
+            "name": "hot"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 6,
+        "fields": {
+            "restaurant": 1,
+            "name": "xhot"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 7,
+        "fields": {
+            "restaurant": 2,
+            "name": "southern"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 8,
+        "fields": {
+            "restaurant": 2,
+            "name": "mild"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 9,
+        "fields": {
+            "restaurant": 2,
+            "name": "medium"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 10,
+        "fields": {
+            "restaurant": 2,
+            "name": "hot"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 11,
+        "fields": {
+            "restaurant": 2,
+            "name": "damn hot"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 12,
+        "fields": {
+            "restaurant": 2,
+            "heat": "shut the cluck up"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 13,
+        "fields": {
+            "restaurant": 3,
+            "name": "love"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 14,
+        "fields": {
+            "restaurant": 3,
+            "name": "lil wimpy"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 15,
+        "fields": {
+            "restaurant": 3,
+            "name": "mild"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 16,
+        "fields": {
+            "restaurant": 3,
+            "heat": "medium"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 17,
+        "fields": {
+            "restaurant": 3,
+            "name": "hot medium"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 18,
+        "fields": {
+            "restaurant": 3,
+            "name": "inferno"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 19,
+        "fields": {
+            "restaurant": 4,
+            "name": "plain"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 20,
+        "fields": {
+            "restaurant": 4,
+            "name": "lite mild"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 21,
+        "fields": {
+            "restaurant": 4,
+            "name": "mild"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 22,
+        "fields": {
+            "restaurant": 4,
+            "name": "medium"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 23,
+        "fields": {
+            "restaurant": 4,
+            "name": "hot"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 24,
+        "fields": {
+            "restaurant": 4,
+            "name": "xhot"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 25,
+        "fields": {
+            "restaurant": 4,
+            "name": "xxhot"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 26,
+        "fields": {
+            "restaurant": 4,
+            "name": "xxxhot"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 27,
+        "fields": {
+            "restaurant": 5,
+            "name": "plain"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 28,
+        "fields": {
+            "restaurant": 5,
+            "name": "mild"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 29,
+        "fields": {
+            "restaurant": 5,
+            "name": "hot"
+        }
+    },
+    {
+        "model": "nashvillehotindexapi.restaurantheat",
+        "pk": 30,
+        "fields": {
+            "restaurant": 5,
+            "name": "hella"
+        }
+    },
+    
+
+]
