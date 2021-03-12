@@ -1,6 +1,6 @@
 [
     {
-        "model": "nashvillehotindexapi.heatrestaurant",
+        "model": "nashvillehotindexapi.order",
         "pk": 1,
         "fields": {
             "restaurant": 1,
@@ -11,23 +11,23 @@
         }
     },
     {
-        "model": "nashvillehotindexapi.heatrestaurant",
+        "model": "nashvillehotindexapi.order",
         "pk": 2,
         "fields": {
             "restaurant": 1,
             "restaurantheat": 5,
-            "customerr": 1,
+            "customer": 1,
             "note": "way too hot",
             "enjoyable": false
         }
     },
     {
-        "model": "nashvillehotindexapi.heatrestaurant",
+        "model": "nashvillehotindexapi.order",
         "pk": 3,
         "fields": {
             "restaurant": 2,
             "restaurantheat": 9,
-            "customerr": 2,
+            "customer": 1,
             "note": "good chicken",
             "enjoyable": true
         }
