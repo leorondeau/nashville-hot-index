@@ -92,7 +92,7 @@
         "pk": 12,
         "fields": {
             "restaurant": 2,
-            "heat": "shut the cluck up"
+            "name": "shut the cluck up"
         }
     },
     {
@@ -124,7 +124,7 @@
         "pk": 16,
         "fields": {
             "restaurant": 3,
-            "heat": "medium"
+            "name": "medium"
         }
     },
     {
