@@ -6,7 +6,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from nashvillehotindexapi.models import Order
+from nashvillehotindexapi.models import Order, restaurant
 from nashvillehotindexapi.models import Customer
 from nashvillehotindexapi.models import Restaurant
 from nashvillehotindexapi.models import RestaurantHeat
@@ -76,12 +76,26 @@ class Orders(ViewSet):
             order.delete()
 
             return Response({}, status=status.HTTP_204_NO_CONTENT)
-
+ 
         except Order.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
         except Exception as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def retrieve(self, request, pk=None):
+
+        restaurant = Restaurant.objects.get(pk=pk)
+
+        try:
+
+            order = Order.objects.get(pk=pk)
+            order = Order.objects.filter(restaurant__id = restaurant.id)
+            serializer = OrderSerializer(
+            order, many=True, context={'request': request})        
+            return Response(serializer.data)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
 
     def list(self, request):
 
