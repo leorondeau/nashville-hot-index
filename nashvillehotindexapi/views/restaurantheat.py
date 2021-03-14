@@ -17,15 +17,18 @@ class RestaurantHeats(ViewSet):
         Returns:
             Response -- JSON serialized game instance
         """
+        restaurant = Restaurant.objects.get(pk=pk)
+
         try:
             # `pk` is a parameter to this function, and
             # Django parses it from the URL route parameter
             #   http://localhost:8000/games/2
             #
             # The `2` at the end of the route becomes `pk`
-            restaurantheat = RestaurantHeat.objects.get(pk=pk)
             # restaurant_heat_levels = RestaurantHeat.objects.filter(restaurant=restaurant)
-            serializer = RestaurantHeatSerializer(restaurantheat, context={'request': request})
+            restaurantheat = RestaurantHeat.objects.get(pk=pk)
+            restaurantheat = RestaurantHeat.objects.filter(restaurant__id = restaurant.id)
+            serializer = RestaurantHeatSerializer(restaurantheat, many=True, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex, status=status.HTTP_404_NOT_FOUND) 
@@ -69,7 +72,7 @@ class RestaurantHeatSerializer(serializers.ModelSerializer):
         serializer type
     """
     restaurant = RestaurantSerializer(many=False)
-    
+
     class Meta:
         model = RestaurantHeat
         url = serializers.HyperlinkedIdentityField(
