@@ -6,7 +6,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from nashvillehotindexapi.models import Order, restaurant, restaurantheat
+from nashvillehotindexapi.models import Order
 from nashvillehotindexapi.models import Customer
 from nashvillehotindexapi.models import Restaurant
 from nashvillehotindexapi.models import RestaurantHeat
@@ -25,8 +25,8 @@ class Orders(ViewSet):
 
         order = Order()
         order.note = request.data["note"]
-        order.customer = customer["customerId"]
         order.enjoyable = request.data["enjoyable"]
+        order.customer = customer
 
         restaurant = Restaurant.objects.get(pk=request.data["restaurantId"])
         restaurantheat = RestaurantHeat.objects.get(pk=request.data["restaurantHeatId"])
@@ -38,9 +38,32 @@ class Orders(ViewSet):
             order.save()
             serializer = OrderSerializer(order, context={'request': request})
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
+
+    def update(self, request, pk=None):
+        """Handle POST operations for Orders
+
+        Returns:
+            Response -- JSON serialized event instance
+        """
+        customer = Customer.objects.get(user=request.auth.user)
+
+        order = Order.objects.get(pk=pk)
+        order.note = request.data["note"]
+        order.enjoyable = request.data["enjoyable"]
+        order.customer = customer
+
+        restaurant = Restaurant.objects.get(pk=request.data["restaurantId"])
+        restaurantheat = RestaurantHeat.objects.get(pk=request.data["restaurantHeatId"])
+        
+        order.restaurant = restaurant
+        order.restaurantheat = restaurantheat
+        order.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
 
 
     def list(self, request):
