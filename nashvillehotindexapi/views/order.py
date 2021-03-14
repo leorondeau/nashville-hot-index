@@ -1,3 +1,4 @@
+import re
 from django.core.exceptions import ValidationError
 from rest_framework import status
 from django.http import HttpResponseServerError
@@ -13,6 +14,34 @@ from nashvillehotindexapi.models import RestaurantHeat
 
 
 class Orders(ViewSet):
+
+    def create(self, request):
+        """Handle POST operations for Orders
+
+        Returns:
+            Response -- JSON serialized event instance
+        """
+        customer = Customer.objects.get(user=request.auth.user)
+
+        order = Order()
+        order.note = request.data["note"]
+        order.customer = customer["customerId"]
+        order.enjoyable = request.data["enjoyable"]
+
+        restaurant = Restaurant.objects.get(pk=request.data["restaurantId"])
+        restaurantheat = RestaurantHeat.objects.get(pk=request.data["restaurantHeatId"])
+        
+        order.restaurant = restaurant
+        order.restaurantheat = restaurantheat
+
+        try:
+            order.save()
+            serializer = OrderSerializer(order, context={'request': request})
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except ValidationError as ex:
+            return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
+
+
 
     def list(self, request):
 
