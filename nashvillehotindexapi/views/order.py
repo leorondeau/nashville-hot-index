@@ -85,26 +85,35 @@ class Orders(ViewSet):
 
     def retrieve(self, request, pk=None):
 
-        restaurant = Restaurant.objects.get(pk=pk)
+        
 
         try:
 
             order = Order.objects.get(pk=pk)
-            order = Order.objects.filter(restaurant__id = restaurant.id)
+            
             serializer = OrderSerializer(
             order, many=True, context={'request': request})        
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
 
-    def list(self, request):
+    def list(self, request, pk=None):
 
+        
         orders = Order.objects.all()
+        
+        customer = Customer.objects.get(user=request.auth.user)
+        restaurant = self.request.query_params.get('restaurantid', None)
 
+        if restaurant is not None:
+            orders = orders.filter(
+                restaurant__id = restaurant,
+                customer__id = customer.id
+            )
         serializer = OrderSerializer(
             orders, many=True, context={'request': request})
-        
         return Response(serializer.data)
+        
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
