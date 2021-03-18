@@ -100,9 +100,9 @@ class Orders(ViewSet):
     def list(self, request, pk=None):
 
         
-        orders = Order.objects.all()
         
         customer = Customer.objects.get(user=request.auth.user)
+        orders = Order.objects.filter(customer__id = customer.id )
         restaurant = self.request.query_params.get('restaurantid', None)
 
         if restaurant is not None:
