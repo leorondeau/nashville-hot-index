@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 from django.views.decorators.csrf import csrf_exempt
 from nashvillehotindexapi.models import Customer
+from rest_framework import status
 
 
 @csrf_exempt
@@ -60,7 +61,7 @@ def register_user(request):
 
     # Now save the extra info in the levelupapi_gamer table
     customer = Customer.objects.create(
-        bio=req_body['bio'],
+        heat_tolerance=req_body['heat_tolerance'],
         user=new_user
     )
 
@@ -72,4 +73,4 @@ def register_user(request):
 
     # Return the token to the client
     data = json.dumps({"token": token.key})
-    return HttpResponse(data, content_type='application/json')
+    return HttpResponse(data, content_type='application/json',status=status.HTTP_201_CREATED)
