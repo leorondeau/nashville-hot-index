@@ -7,6 +7,9 @@ from rest_framework import serializers
 from rest_framework import status
 from nashvillehotindexapi.models import RestaurantHeat
 from nashvillehotindexapi.models import Restaurant
+from nashvillehotindexapi.models import Rating
+from nashvillehotindexapi.models import Customer
+from rest_framework.decorators import action
 
 class RestaurantHeats(ViewSet):
 
@@ -30,7 +33,7 @@ class RestaurantHeats(ViewSet):
             restaurantheat = RestaurantHeat.objects.filter(restaurant__id = restaurant.id)
             serializer = RestaurantHeatSerializer(restaurantheat, many=True, context={'request': request})
             return Response(serializer.data)
-        except Exception as ex:
+        except ValueError as ex:
             return HttpResponseServerError(ex, status=status.HTTP_404_NOT_FOUND) 
     
     def list(self, request):
@@ -51,6 +54,24 @@ class RestaurantHeats(ViewSet):
         serializer = RestaurantHeatSerializer(
             restaurants, many=True, context={'request': request})
         return Response(serializer.data)
+
+    @action(methods=['POST'], detail=True)
+    def rate(self, request, pk=None):
+
+        if request.method == "POST":
+
+            rating = Rating()
+            rating.restaurantheat = RestaurantHeat.objects.get(pk=pk)
+            rating.customer = Customer.objects.get(user=request.auth.user)
+            rating.rating = request.data["rating"]
+
+            rating.save()
+
+            return Response({'message': "Rating added."}, status=status.HTTP_204_NO_CONTENT)
+
+        return Response(None, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
 
 class RestaurantSerializer(serializers.ModelSerializer):
     """JSON serializer for games
