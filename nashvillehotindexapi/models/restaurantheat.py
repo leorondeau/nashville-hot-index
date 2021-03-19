@@ -22,4 +22,3 @@ class RestaurantHeat(models.Model):
             return 0
         return avg
 
-  
