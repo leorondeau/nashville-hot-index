@@ -36,18 +36,15 @@ class Restaurants(ViewSet):
         Returns:
             Response -- JSON serialized list of games
         """
-        # Get all game records from the database
-        restaurants = Restaurant.objects.all()
+        try:
+            restaurants = Restaurant.objects.all()
 
-        # Support filtering games by type
-        #    http://localhost:8000/games?type=1
-        #
-        # That URL will retrieve all tabletop games
-        
 
-        serializer = RestaurantSerializer(
-            restaurants, many=True, context={'request': request})
-        return Response(serializer.data)
+            serializer = RestaurantSerializer(
+                restaurants, many=True, context={'request': request})
+            return Response(serializer.data)
+        except ValueError as ex:
+            return HttpResponseServerError(ex, status=status.HTTP_404_NOT_FOUND) 
 
 
 class RestaurantSerializer(serializers.ModelSerializer):
