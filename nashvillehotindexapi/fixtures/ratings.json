@@ -5,7 +5,7 @@
         "fields": {
             "restaurantheat": 4,
             "customer": 1,
-            "rating": 75
+            "rating": 10
         }
     }
 ]

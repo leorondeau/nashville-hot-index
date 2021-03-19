@@ -5,7 +5,7 @@
         "fields": {
             "user": 1,
             "user_name": "Scary Spice",
-            "heat_tolerance": 50
+            "heat_tolerance": 6
         }
     }
 ]
