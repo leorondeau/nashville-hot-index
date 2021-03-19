@@ -21,7 +21,7 @@ class RestaurantHeats(ViewSet):
             Response -- JSON serialized game instance
         """
         restaurant = Restaurant.objects.get(pk=pk)
-
+        
         try:
             # `pk` is a parameter to this function, and
             # Django parses it from the URL route parameter
@@ -42,13 +42,11 @@ class RestaurantHeats(ViewSet):
         Returns:
             Response -- JSON serialized list of games
         """
-        # Get all game records from the database
+        # Get all Restaurant Heats from the database. Only needed if stretch goal
+        # met for listing hottest heats 
         restaurants = RestaurantHeat.objects.all()
 
-        # Support filtering games by type
-        #    http://localhost:8000/games?type=1
-        #
-        # That URL will retrieve all tabletop games
+     
         
 
         serializer = RestaurantHeatSerializer(
@@ -84,7 +82,6 @@ class RestaurantSerializer(serializers.ModelSerializer):
         fields = ('id', 'name')
 
 
-
 class RestaurantHeatSerializer(serializers.ModelSerializer):
     """JSON serializer for Restaurant heat levels
     
@@ -100,5 +97,5 @@ class RestaurantHeatSerializer(serializers.ModelSerializer):
             view_name='restaurant',
             lookup_field='id'
         )
-        fields = ('id', 'name', 'restaurant')
+        fields = ('id', 'name', 'restaurant', 'average_rating')
         depth = 1
