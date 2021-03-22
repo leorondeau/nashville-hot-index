@@ -59,7 +59,7 @@ def register_user(request):
         last_name=req_body['last_name']
     )
 
-    # Now save the extra info in the levelupapi_gamer table
+    
     customer = Customer.objects.create(
         heat_tolerance=req_body['heat_tolerance'],
         user=new_user
