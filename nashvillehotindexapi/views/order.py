@@ -106,6 +106,7 @@ class Orders(ViewSet):
         orders = Order.objects.filter(customer__id = customer.id )
         restaurant = self.request.query_params.get('restaurantid', None)
 
+    
         if restaurant is not None:
             orders = orders.filter(
                 restaurant__id = restaurant,
@@ -129,7 +130,7 @@ class RestaurantSerializer(serializers.ModelSerializer):
 class RestaurantHeatSerializer(serializers.ModelSerializer):
     class Meta:
         model = RestaurantHeat
-        fields = ['name']
+        fields = ('id','name')
 
 
 class OrderSerializer(serializers.ModelSerializer):
