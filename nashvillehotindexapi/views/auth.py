@@ -10,7 +10,7 @@ from rest_framework import status
 
 @csrf_exempt
 def login_user(request):
-    '''Handles the authentication of a gamer
+    '''Handles the authentication of a customer
 
     Method arguments:
       request -- The full HTTP request object
@@ -59,7 +59,7 @@ def register_user(request):
         last_name=req_body['last_name']
     )
 
-    # Now save the extra info in the levelupapi_gamer table
+    
     customer = Customer.objects.create(
         heat_tolerance=req_body['heat_tolerance'],
         user=new_user
