@@ -10,7 +10,7 @@ from rest_framework import status
 
 @csrf_exempt
 def login_user(request):
-    '''Handles the authentication of a gamer
+    '''Handles the authentication of a customer
 
     Method arguments:
       request -- The full HTTP request object

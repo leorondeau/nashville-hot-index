@@ -6,7 +6,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from nashvillehotindexapi.models import Order, restaurant
+from nashvillehotindexapi.models import Order
 from nashvillehotindexapi.models import Customer
 from nashvillehotindexapi.models import Restaurant
 from nashvillehotindexapi.models import RestaurantHeat
@@ -26,6 +26,7 @@ class Orders(ViewSet):
         order = Order()
         order.note = request.data["note"]
         order.enjoyable = request.data["enjoyable"]
+        order.created_date = request.data["createdDate"]
         order.customer = customer
 
         restaurant = Restaurant.objects.get(pk=request.data["restaurantId"])
@@ -92,7 +93,7 @@ class Orders(ViewSet):
             order = Order.objects.get(pk=pk)
             
             serializer = OrderSerializer(
-            order, many=True, context={'request': request})        
+            order, context={'request': request})        
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
