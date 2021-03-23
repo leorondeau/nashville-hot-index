@@ -8,7 +8,7 @@ from rest_framework import status
 from nashvillehotindexapi.models import RestaurantHeat
 from nashvillehotindexapi.models import Restaurant
 from nashvillehotindexapi.models import Rating
-from nashvillehotindexapi.models import Customer
+from nashvillehotindexapi.models import Order
 from rest_framework.decorators import action
 
 class RestaurantHeats(ViewSet):
@@ -52,22 +52,6 @@ class RestaurantHeats(ViewSet):
         serializer = RestaurantHeatSerializer(
             restaurants, many=True, context={'request': request})
         return Response(serializer.data)
-
-    @action(methods=['POST'], detail=True)
-    def rate(self, request, pk=None):
-
-        if request.method == "POST":
-
-            rating = Rating()
-            rating.restaurantheat = RestaurantHeat.objects.get(pk=pk)
-            rating.customer = Customer.objects.get(user=request.auth.user)
-            rating.rating = request.data["rating"]
-
-            rating.save()
-
-            return Response({'message': "Rating added."}, status=status.HTTP_204_NO_CONTENT)
-
-        return Response(None, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
 

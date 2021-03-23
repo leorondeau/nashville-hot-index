@@ -3,9 +3,9 @@
         "model": "nashvillehotindexapi.rating",
         "pk": 1,
         "fields": {
-            "restaurantheat": 4,
-            "customer": 1,
-            "rating": 10
+            "restaurantheat": 2,
+            "order": 1,
+            "rating": 3
         }
     }
 ]

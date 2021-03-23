@@ -10,6 +10,8 @@ from nashvillehotindexapi.models import Order
 from nashvillehotindexapi.models import Customer
 from nashvillehotindexapi.models import Restaurant
 from nashvillehotindexapi.models import RestaurantHeat
+from nashvillehotindexapi.models import Rating
+
 
 
 
@@ -35,13 +37,21 @@ class Orders(ViewSet):
         order.restaurant = restaurant
         order.restaurantheat = restaurantheat
 
+       
+
         try:
             order.save()
-            serializer = OrderSerializer(order, context={'request': request})
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-
+            rating = Rating()
+            rating.restaurantheat = restaurantheat
+            rating.order = order
+            rating.rating = request.data["rating"]
+            rating.save()
+            
+            return Response({"message": "Rating added"}, status=status.HTTP_201_CREATED)
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
+
+        
 
 
     def update(self, request, pk=None):
@@ -91,7 +101,9 @@ class Orders(ViewSet):
         try:
 
             order = Order.objects.get(pk=pk)
-            
+            rating = Rating.objects.get(order_id = order.id)
+            order.rating = rating
+            order.save()
             serializer = OrderSerializer(
             order, context={'request': request})        
             return Response(serializer.data)
@@ -105,14 +117,14 @@ class Orders(ViewSet):
         customer = Customer.objects.get(user=request.auth.user)
         orders = Order.objects.filter(customer__id = customer.id )
         restaurant = self.request.query_params.get('restaurantid', None)
-
+        
     
         if restaurant is not None:
             orders = orders.filter(
                 restaurant__id = restaurant,
                 customer__id = customer.id
             )
-        serializer = OrderSerializer(
+        serializer = OrderListSerializer(
             orders, many=True, context={'request': request})
         return Response(serializer.data)
         
@@ -131,13 +143,19 @@ class RestaurantHeatSerializer(serializers.ModelSerializer):
     class Meta:
         model = RestaurantHeat
         fields = ('id','name')
+        depth = 1
 
+class RatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rating
+        fields = ('id','rating')
 
 class OrderSerializer(serializers.ModelSerializer):
 
     customer = CustomerSerializer(many=False) 
     restaurant= RestaurantSerializer(many=False)
     restaurantheat = RestaurantHeatSerializer(many=False)
+    rating = RatingSerializer(many=False)
 
     class Meta:
         model=Order
@@ -145,5 +163,23 @@ class OrderSerializer(serializers.ModelSerializer):
             view_name='order',
             lookup_field='id'
         )
-        fields = ('id', 'restaurant', 'customer', 'restaurantheat', 'note', 'enjoyable')
+        fields = ('id', 'restaurant', 'customer', 
+        'restaurantheat', 'note', 'enjoyable', 'rating')
+        depth = 1
+
+class OrderListSerializer(serializers.ModelSerializer):
+
+    customer = CustomerSerializer(many=False) 
+    restaurant= RestaurantSerializer(many=False)
+    restaurantheat = RestaurantHeatSerializer(many=False)
+    
+
+    class Meta:
+        model=Order
+        url = serializers.HyperlinkedIdentityField(
+            view_name='order',
+            lookup_field='id'
+        )
+        fields = ('id', 'restaurant', 'customer', 
+        'restaurantheat', 'note', 'enjoyable')
         depth = 1

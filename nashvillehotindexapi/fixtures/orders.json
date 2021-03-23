@@ -10,29 +10,5 @@
             "note": "delicious",
             "enjoyable": true
         }
-    },
-    {
-        "model": "nashvillehotindexapi.order",
-        "pk": 2,
-        "fields": {
-            "restaurant": 1,
-            "restaurantheat": 5,
-            "customer": 1,
-            "created_date": "2020-09-16",
-            "note": "way too hot",
-            "enjoyable": false
-        }
-    },
-    {
-        "model": "nashvillehotindexapi.order",
-        "pk": 3,
-        "fields": {
-            "restaurant": 2,
-            "restaurantheat": 9,
-            "customer": 1,
-            "created_date": "2020-10-16",
-            "note": "good chicken",
-            "enjoyable": true
-        }
     }
 ]
