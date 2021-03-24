@@ -1,5 +1,9 @@
+from django.core.validators import ip_address_validator_map
+from django.contrib.auth.models import User
 from django.db import models
 from .rating import Rating
+from .customer import Customer
+
 
 class RestaurantHeat(models.Model):
     restaurant = models.ForeignKey("Restaurant", on_delete=models.CASCADE, related_name="heatlevels")
@@ -22,5 +26,19 @@ class RestaurantHeat(models.Model):
         except ZeroDivisionError:
             return 0
         return limited_float
+
+    @property
+    def heat_suggestion(self):
+
+        customer = Customer.objects.get(user)
+        customer_tolerance = customer.heat_tolerance
+        ratings = Rating.objects.filter(restaurantheat=self)
+        
+        for rating in ratings:
+           if customer_tolerance == rating.rating:
+            
+            return rating.restaurantheat
+
+
 
     
