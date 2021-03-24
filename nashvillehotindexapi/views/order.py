@@ -66,10 +66,13 @@ class Orders(ViewSet):
         order.note = request.data["note"]
         order.enjoyable = request.data["enjoyable"]
         order.customer = customer
-
+        
         restaurant = Restaurant.objects.get(pk=request.data["restaurantId"])
         restaurantheat = RestaurantHeat.objects.get(pk=request.data["restaurantHeatId"])
-        
+        rating = Rating.objects.get(order_id=order.id)
+
+        rating.rating = request.data["rating"]
+        rating.save()
         order.restaurant = restaurant
         order.restaurantheat = restaurantheat
         order.save()
