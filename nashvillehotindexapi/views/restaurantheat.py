@@ -46,9 +46,6 @@ class RestaurantHeats(ViewSet):
         # met for listing hottest heats 
         restaurants = RestaurantHeat.objects.all()
 
-     
-        
-
         serializer = RestaurantHeatSerializer(
             restaurants, many=True, context={'request': request})
         return Response(serializer.data)
