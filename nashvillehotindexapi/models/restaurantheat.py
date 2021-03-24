@@ -18,8 +18,9 @@ class RestaurantHeat(models.Model):
             total_rating += rating.rating
         try:
             avg = total_rating / len(ratings)
+            limited_float = round(avg, 2)
         except ZeroDivisionError:
             return 0
-        return avg
+        return limited_float
 
     
