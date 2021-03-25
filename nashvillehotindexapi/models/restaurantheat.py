@@ -2,7 +2,6 @@ from django.core.validators import ip_address_validator_map
 from django.contrib.auth.models import User
 from django.db import models
 from .rating import Rating
-from .customer import Customer
 
 
 class RestaurantHeat(models.Model):
@@ -22,7 +21,7 @@ class RestaurantHeat(models.Model):
             total_rating += rating.rating
         try:
             avg = total_rating / len(ratings)
-            limited_float = round(avg, 0)
+            limited_float = round(avg, 1)
         except ZeroDivisionError:
             return 0
         return limited_float

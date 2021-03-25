@@ -11,6 +11,7 @@ from nashvillehotindexapi.models import Customer
 from nashvillehotindexapi.models import Restaurant
 from nashvillehotindexapi.models import RestaurantHeat
 from nashvillehotindexapi.models import Rating
+from django.core.paginator import Paginator
 
 
 
@@ -118,15 +119,33 @@ class Orders(ViewSet):
         
         
         customer = Customer.objects.get(user=request.auth.user)
-        orders = Order.objects.filter(customer__id = customer.id )
+        orders = Order.objects.filter(customer__id = customer.id ).order_by('-id')
         restaurant = self.request.query_params.get('restaurantid', None)
-        
-    
+        limit = self.request.query_params.get('limit', None)
+        print(limit)
         if restaurant is not None:
-            orders = orders.filter(
-                restaurant__id = restaurant,
-                customer__id = customer.id
-            )
+            if limit is not None:
+
+                orders = orders.filter(
+                    restaurant__id = restaurant,
+                    customer__id = customer.id
+                )[:int(limit)]
+            else:
+                orders = orders.filter(
+                    restaurant__id = restaurant,
+                    customer__id = customer.id)
+        else:
+            if limit is not None:
+
+                orders = orders.filter(
+                   
+                    customer__id = customer.id
+                )[:int(limit)]
+            else:
+                orders = orders.filter(
+                    
+                    customer__id = customer.id)
+
         serializer = OrderListSerializer(
             orders, many=True, context={'request': request})
         return Response(serializer.data)
@@ -178,6 +197,7 @@ class OrderListSerializer(serializers.ModelSerializer):
     
 
     class Meta:
+        paginate_by=2
         model=Order
         url = serializers.HyperlinkedIdentityField(
             view_name='order',

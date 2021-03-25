@@ -3,3 +3,4 @@ from .auth import register_user
 from .restaurant import Restaurants
 from .restaurantheat import RestaurantHeats
 from .order import Orders
+from .profile import Profile
