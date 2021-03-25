@@ -22,22 +22,12 @@ class RestaurantHeat(models.Model):
             total_rating += rating.rating
         try:
             avg = total_rating / len(ratings)
-            limited_float = round(avg, 2)
+            limited_float = round(avg, 0)
         except ZeroDivisionError:
             return 0
         return limited_float
 
-    @property
-    def heat_suggestion(self):
-
-        customer = Customer.objects.get(user)
-        customer_tolerance = customer.heat_tolerance
-        ratings = Rating.objects.filter(restaurantheat=self)
-        
-        for rating in ratings:
-           if customer_tolerance == rating.rating:
-            
-            return rating.restaurantheat
+   
 
 
 
