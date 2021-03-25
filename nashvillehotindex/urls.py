@@ -1,16 +1,16 @@
-from nashvillehotindexapi.models.restaurant import Restaurant
 from rest_framework import routers
 from django.conf.urls import include
 from django.urls import path
 from nashvillehotindexapi.views import register_user, login_user
 from nashvillehotindexapi.views import Restaurants
 from nashvillehotindexapi.views import RestaurantHeats
-from nashvillehotindexapi.views import Orders
+from nashvillehotindexapi.views import Orders, Profile
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'restaurants', Restaurants, 'restaurant')
 router.register(r'restaurantheats', RestaurantHeats, 'restaurantheat')
 router.register(r'orders', Orders, 'order')
+router.register(r'profile', Profile, 'profile')
 
 urlpatterns = [
     path('', include(router.urls)),
