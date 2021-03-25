@@ -8,6 +8,7 @@ from rest_framework import status
 from nashvillehotindexapi.models import Restaurant
 from nashvillehotindexapi.models import RestaurantHeat
 
+
 from nashvillehotindexapi.models import Customer
 
 class Restaurants(ViewSet):
@@ -32,15 +33,18 @@ class Restaurants(ViewSet):
             restaurant.suggested_heat = "mild"
 
             for heat_level in restaurant_heat_levels:
-                if int(heat_level.average_rating) == (customer.heat_tolerance):
+                if (int(heat_level.average_rating) == (customer.heat_tolerance)):
                     restaurant.suggested_heat = heat_level.name
-                elif int(heat_level.average_rating) == (customer.heat_tolerance - 1):
+                elif (int(heat_level.average_rating) == (customer.heat_tolerance - 1)):
                     restaurant.suggested_heat = heat_level.name
-                elif int(heat_level.average_rating) == (customer.heat_tolerance + 1):
+                elif (int(heat_level.average_rating) == (customer.heat_tolerance + 1)):
                     restaurant.suggested_heat = heat_level.name
+                elif (int(heat_level.average_rating) == (customer.heat_tolerance - 2)):
+                    restaurant.suggested_heat = heat_level.name
+                elif (int(heat_level.average_rating) == (customer.heat_tolerance + 2)):
+                    restaurant.suggested_heat = heat_level.name
+
                 
-
-
             serializer = RestaurantSerializer(restaurant, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
