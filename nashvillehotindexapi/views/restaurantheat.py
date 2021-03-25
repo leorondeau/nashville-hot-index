@@ -37,15 +37,10 @@ class RestaurantHeats(ViewSet):
             return HttpResponseServerError(ex, status=status.HTTP_404_NOT_FOUND) 
     
     def list(self, request):
-        """Handle GET requests to games resource
-
-        Returns:
-            Response -- JSON serialized list of games
-        """
-        # Get all Restaurant Heats from the database. Only needed if stretch goal
-        # met for listing hottest heats 
+  
+        
         restaurants = RestaurantHeat.objects.all()
-
+        
         serializer = RestaurantHeatSerializer(
             restaurants, many=True, context={'request': request})
         return Response(serializer.data)
@@ -53,23 +48,14 @@ class RestaurantHeats(ViewSet):
 
 
 class RestaurantSerializer(serializers.ModelSerializer):
-    """JSON serializer for games
 
-    Arguments:
-        serializer type
-    """
     class Meta:
         model = Restaurant
         fields = ('id', 'name')
 
 
 class RestaurantHeatSerializer(serializers.ModelSerializer):
-    """JSON serializer for Restaurant heat levels
-    
-
-    Arguments:
-        serializer type
-    """
+  
     restaurant = RestaurantSerializer(many=False)
 
     class Meta:
@@ -78,5 +64,5 @@ class RestaurantHeatSerializer(serializers.ModelSerializer):
             view_name='restaurant',
             lookup_field='id'
         )
-        fields = ('id', 'name', 'restaurant', 'average_rating', 'ratings')
+        fields = ('id', 'name', 'restaurant', 'average_rating')
         depth = 1
