@@ -122,7 +122,7 @@ class Orders(ViewSet):
         orders = Order.objects.filter(customer__id = customer.id ).order_by('-id')
         restaurant = self.request.query_params.get('restaurantid', None)
         limit = self.request.query_params.get('limit', None)
-        print(limit)
+        
         if restaurant is not None:
             if limit is not None:
 
