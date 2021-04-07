@@ -11,7 +11,7 @@ Nashville Hot Heat Index is a single page full CRUD application built with React
 1. Clone this repo
 
    ```
-   git clone git@github.com:silaslowe/nashville-hot-index.git
+   git clone git@github.com:leorondeau/nashville-hot-index.git
    cd nashville-hot-index
    ```
 
