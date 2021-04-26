@@ -33,7 +33,7 @@ class Restaurants(ViewSet):
             restaurant.suggested_heat = "mild"
 
             for heat_level in restaurant_heat_levels:
-                if (int(heat_level.average_rating) <= (customer.heat_tolerance)):
+                if (int(heat_level.average_rating) <= (customer.heat_tolerance) and heat_level.average_rating != 0):
                     restaurant.suggested_heat = heat_level.name
 
                 
