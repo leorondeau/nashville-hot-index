@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# This command is for resetting the migrations
+# chmod +x /path/to/yourscript.sh
+# ./seed.sh
+
+
 rm -rf nashvillehotindexapi/migrations
 rm db.sqlite3
 python manage.py makemigrations nashvillehotindexapi

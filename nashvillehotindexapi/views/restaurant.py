@@ -31,7 +31,7 @@ class Restaurants(ViewSet):
             customer = Customer.objects.get(user=request.auth.user)
             restaurant_heat_levels = RestaurantHeat.objects.filter(restaurant=restaurant)
             restaurant.suggested_heat = "mild"
-
+            # Linear search through restaurant heats for user tolerance match
             for heat_level in restaurant_heat_levels:
                 if (int(heat_level.average_rating) <= (customer.heat_tolerance) and heat_level.average_rating != 0):
                     restaurant.suggested_heat = heat_level.name
