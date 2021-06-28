@@ -5,6 +5,6 @@ where id = 1;
 
 
 update nashvillehotindexapi_restaurant
-set img = '/static/media/princes.0c36b8c3.webp'
-where id = 4;
+set img = '/static/media/fourdegrees.9217c3d9.gif'
+where id = 12;
 
