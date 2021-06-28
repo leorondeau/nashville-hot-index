@@ -73,6 +73,6 @@ class RestaurantSerializer(serializers.ModelSerializer):
             view_name='restaurant',
             lookup_field='id'
         )
-        fields = ('id', 'name', 'website', 'heatlevels', 'suggested_heat')
+        fields = ('id', 'name', 'website', 'img', 'heatlevels', 'suggested_heat')
         depth = 1
 
