@@ -111,7 +111,6 @@ class Orders(ViewSet):
             serializer = OrderSerializer(
             order, context={'request': request})        
             return Response(serializer.data)
-
         except Exception as ex:
             return HttpResponseServerError(ex)
         except Exception as ex:
