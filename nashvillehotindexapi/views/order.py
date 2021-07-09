@@ -111,11 +111,8 @@ class Orders(ViewSet):
             serializer = OrderSerializer(
             order, context={'request': request})        
             return Response(serializer.data)
-
         except Exception as ex:
             return HttpResponseServerError(ex)
-        except Exception as ex:
-            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def list(self, request, pk=None):
 
