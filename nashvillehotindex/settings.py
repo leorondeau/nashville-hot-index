@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+#Heroku additions
 import os
 import environ
 environ.Env.read_env()
@@ -23,9 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# Created os.environ for heroku, pulling from .env file which is already in the gitignore
 SECRET_KEY = os.environ['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Heroku change: true to false
 DEBUG = False
 
 ALLOWED_HOSTS = ['0.0.0.0']
@@ -142,5 +145,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/' 
+# Heroku addition
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
