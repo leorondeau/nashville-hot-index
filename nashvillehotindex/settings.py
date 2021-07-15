@@ -14,7 +14,6 @@ from pathlib import Path
 #Heroku additions
 import os
 import environ
-#django_environ-0.4.5-py2.py3-none-any.whl
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Created os.environ for heroku, pulling from .env file which is already in the gitignore
-SECRET_KEY = 'd^o%tinjf%dr)fl815nrmbx%0w-yl$bebiw4szsuu_7(+m&!wt'
+SECRET_KEY = os.environ['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Heroku change: true to false
