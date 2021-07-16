@@ -6,6 +6,7 @@ from nashvillehotindexapi.views import Restaurants
 from nashvillehotindexapi.views import RestaurantHeats
 from nashvillehotindexapi.views import Orders, Profile
 
+
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'restaurants', Restaurants, 'restaurant')
 router.register(r'restaurantheats', RestaurantHeats, 'restaurantheat')

@@ -31,7 +31,7 @@ SECRET_KEY = os.environ['secret_key']
 # Heroku change: true to false
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['whispering-hollows-65332.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -63,6 +63,7 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://127.0.0.1:3000',
+    'https://nashvillehotindex.herokuapp.com/',
 )
 
 MIDDLEWARE = [
@@ -146,7 +147,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/' 
 # Heroku addition
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #django_environ-0.4.5-py2.py3-none-any.whl
 
