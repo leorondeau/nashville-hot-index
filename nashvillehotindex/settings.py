@@ -29,7 +29,7 @@ SECRET_KEY = os.environ['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Heroku change: true to false
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['whispering-hollows-65332.herokuapp.com', 'localhost']
 
