@@ -1,3 +1,7 @@
+# requirements.txt file is a file that lists all of the modules needed for the 
+# Django project to work. 
+
+
 asgiref==3.3.1
 astroid==2.5.1
 autopep8==1.5.5
