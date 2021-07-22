@@ -151,6 +151,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/' 
 # Heroku addition
+# In production a STATIC_ROOT must defined
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #django_environ-0.4.5-py2.py3-none-any.whl
