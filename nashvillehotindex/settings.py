@@ -28,9 +28,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# Heroku change: true to false
+# Deployment set to False
+# For a production environment, though, this is a really bad idea, because it leaks lots of 
+# information about your project: excerpts of your source code, local variables, settings, 
+# libraries used, etc.
 DEBUG = False
 
+# When Debug = False Allowed_Hosts needs variables are it will not work.
 ALLOWED_HOSTS = ['whispering-hollows-65332.herokuapp.com', 'localhost']
 
 
@@ -147,6 +151,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/' 
 # Heroku addition
+# In production a STATIC_ROOT must defined
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #django_environ-0.4.5-py2.py3-none-any.whl
