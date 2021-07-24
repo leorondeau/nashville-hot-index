@@ -25,14 +25,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Created os.environ for heroku, pulling from .env file which is already in the gitignore
-SECRET_KEY = os.environ['secret_key']
-
+# SECRET_KEY = os.environ['secret_key']
+SECRET_KEY = 'd^o%tinjf%dr)fl815nrmbx%0w-yl$bebiw4szsuu_7(+m&!wt'
 # SECURITY WARNING: don't run with debug turned on in production!
 # Deployment set to False
 # For a production environment, though, this is a really bad idea, because it leaks lots of 
 # information about your project: excerpts of your source code, local variables, settings, 
 # libraries used, etc.
-DEBUG = False
+DEBUG = True
 
 # When Debug = False Allowed_Hosts needs variables are it will not work.
 ALLOWED_HOSTS = ['whispering-hollows-65332.herokuapp.com', 'localhost']
@@ -67,7 +67,7 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    'https://nashvillehotindex.herokuapp.com/',
+    # 'https://nashvillehotindex.herokuapp.com/',
 )
 
 MIDDLEWARE = [
