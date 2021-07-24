@@ -1,3 +1,3 @@
 update nashvillehotindexapi_restaurant
-set img = 'https://drive.google.com/file/d/16v7j0NMlnrlIMPGX1FcTbs6qBLuwfe6p/view?usp=sharing'
+set img = '/Users/admin/workspace/python/nashville-hot-index/nashvillehotindexapi/media/400-degrees1.gif'
 where id = 12;

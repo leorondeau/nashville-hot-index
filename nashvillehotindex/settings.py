@@ -154,5 +154,8 @@ STATIC_URL = '/static/'
 # In production a STATIC_ROOT must defined
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#django_environ-0.4.5-py2.py3-none-any.whl
+# Following two lines added for media
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 
