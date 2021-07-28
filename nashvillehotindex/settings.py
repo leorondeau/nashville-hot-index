@@ -53,8 +53,6 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'nashvillehotindexapi',
-    'django.contrib.staticfiles',
-    'gdstorage',
 ]
 
 REST_FRAMEWORK = {
@@ -71,7 +69,7 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    'https://nashvillehotindex.herokuapp.com/',
+    # 'https://nashvillehotindex.herokuapp.com/',
 )
 
 MIDDLEWARE = [
