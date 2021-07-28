@@ -25,7 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Created os.environ for heroku, pulling from .env file which is already in the gitignore
-SECRET_KEY = os.environ['secret_key']
+# SECRET_KEY = os.environ['secret_key']
+SECRET_KEY='d^o%tinjf%dr)fl815nrmbx%0w-yl$bebiw4szsuu_7(+m&!wt'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -52,6 +53,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'nashvillehotindexapi',
+    'django.contrib.staticfiles',
+    'gdstorage',
 ]
 
 REST_FRAMEWORK = {
