@@ -1,7 +1,8 @@
 update nashvillehotindexapi_restaurant
-set img = '/static/media/bjs.5e40a1c5.png'
-where id = 7;
+set img = '/static/media/bigshakes.df70e10d.png'
+where id = 10;
 
-select *
+select img
 from nashvillehotindexapi_restaurant
-where id=7;
+where id=10;
+
