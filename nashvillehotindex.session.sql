@@ -1,7 +1,7 @@
 update nashvillehotindexapi_restaurant
-set img = '/Users/admin/workspace/python/nashville-hot-index/nashvillehotindexapi/media/400-degrees1.gif'
-where id = 12;
+set img = '/static/media/bjs.5e40a1c5.png'
+where id = 7;
 
 select *
 from nashvillehotindexapi_restaurant
-where id=12;
+where id=7;
