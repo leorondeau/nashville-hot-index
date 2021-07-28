@@ -26,4 +26,3 @@ urlpatterns = [
 
 #Added from youtube tutorial media test
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

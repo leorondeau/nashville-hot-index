@@ -28,6 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['secret_key']
 
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 # Deployment set to False
 # For a production environment, though, this is a really bad idea, because it leaks lots of 
