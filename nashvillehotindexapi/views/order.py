@@ -101,7 +101,6 @@ class Orders(ViewSet):
     def retrieve(self, request, pk=None):
 
         
-
         try:
 
             order = Order.objects.get(pk=pk)
